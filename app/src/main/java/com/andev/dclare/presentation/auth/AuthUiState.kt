@@ -22,3 +22,4 @@ sealed interface AuthUiEvent {
     object DemoLoginClicked : AuthUiEvent
     object ClearError : AuthUiEvent
 }
+

@@ -60,3 +60,4 @@ php -S 127.0.0.1:8000
 - Contraseñas procesadas exclusivamente con algoritmos `PASSWORD_DEFAULT` (Bcrypt/Argon2).
 - Todas las consultas a base de datos utilizan sentencias preparadas (`prepare` + `bind_param`) para mitigar inyecciones SQL.
 - Tokens de sesión almacenados en formato hash SHA-256 en base de datos.
+

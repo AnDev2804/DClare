@@ -26,3 +26,4 @@ sealed interface ClientsUiEvent {
     data class NewTaxpayerTypeChanged(val type: TaxpayerType) : ClientsUiEvent
     object SubmitAddCompany : ClientsUiEvent
 }
+

@@ -22,3 +22,4 @@ return [
     'MEMBERSHIP_RECEIPT_DIR' => __DIR__ . '/storage/receipts',
     'MEMBERSHIP_WHATSAPP_NUMBER' => '15550192834',
 ];
+

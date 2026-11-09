@@ -21,3 +21,4 @@ sealed interface ShieldUiEvent {
     object UpgradeToPro : ShieldUiEvent
     object DismissSuccessMessage : ShieldUiEvent
 }
+

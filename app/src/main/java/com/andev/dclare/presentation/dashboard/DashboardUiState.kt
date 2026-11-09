@@ -24,3 +24,4 @@ sealed interface DashboardUiEvent {
     data class ToggleTax(val taxCode: String, val applies: Boolean) : DashboardUiEvent
     object RefreshCurrencyRates : DashboardUiEvent
 }
+

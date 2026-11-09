@@ -28,3 +28,4 @@ sealed interface CalendarUiEvent {
     data class SelectMonth(val month: Int) : CalendarUiEvent
     data class SelectDay(val day: Int) : CalendarUiEvent
 }
+

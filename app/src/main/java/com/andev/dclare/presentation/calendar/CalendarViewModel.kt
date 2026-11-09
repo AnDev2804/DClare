@@ -121,3 +121,4 @@ class CalendarViewModel(
         _uiState.update { it.copy(obligationsForSelectedDay = matchingTaxes) }
     }
 }
+

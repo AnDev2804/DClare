@@ -1,5 +1,6 @@
 package com.andev.dclare
 
+import com.andev.dclare.data.dto.DolarApiResponseDto
 import com.andev.dclare.data.dto.FrankfurterResponseDto
 import com.andev.dclare.data.mappers.FiscalMappers
 import com.andev.dclare.data.repository.AuthRepositoryImpl
@@ -25,6 +26,21 @@ class FiscalUnitTest {
     }
 
     @Test
+    fun dolarApiMapping_convertsBcvRateProperly() {
+        val dto = DolarApiResponseDto(
+            moneda = "USD",
+            fuente = "oficial",
+            nombre = "Dólar",
+            promedio = 897.54,
+            fechaActualizacion = "2026-11-09T00:00:00-04:00"
+        )
+        val rates = FiscalMappers.mapDolarApiDtoToCurrencyRates(dto)
+        assertEquals("USD", rates.base)
+        assertEquals(897.54, rates.vesRate, 0.001)
+        assertEquals("2026-11-09", rates.date)
+    }
+
+    @Test
     fun currencyRatesMapping_convertsProperly() {
         val dto = FrankfurterResponseDto(
             amount = 1.0,
@@ -32,10 +48,10 @@ class FiscalUnitTest {
             date = "2026-11-08",
             rates = mapOf("EUR" to 0.92)
         )
-        val rates = FiscalMappers.mapFrankfurterDtoToCurrencyRates(dto, fallbackVesRate = 49.35)
+        val rates = FiscalMappers.mapFrankfurterDtoToCurrencyRates(dto, fallbackVesRate = 897.54)
         assertEquals("USD", rates.base)
         assertEquals(0.92, rates.eurRate, 0.001)
-        assertEquals(49.35, rates.vesRate, 0.001)
+        assertEquals(897.54, rates.vesRate, 0.001)
     }
 
     @Test
@@ -43,7 +59,7 @@ class FiscalUnitTest {
         val repo = CurrencyRepositoryImpl()
         val usdAmount = 100.0
         val vesAmount = repo.convertUsdToVes(usdAmount)
-        assertEquals(4935.0, vesAmount, 0.1)
+        assertEquals(89754.0, vesAmount, 0.1)
     }
 
     @Test

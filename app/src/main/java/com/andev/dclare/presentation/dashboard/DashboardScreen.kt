@@ -167,7 +167,7 @@ fun DashboardScreen(
                                 color = EmeraldLight
                             )
                             Text(
-                                text = "Tasa ${String.format(Locale.US, "%.2f", state.currencyRates.vesRate)}",
+                                text = "Tasa BCV: ${String.format(Locale.US, "%.2f", state.currencyRates.vesRate)} VES/USD",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = TextSecondary,
                                 fontSize = 10.sp
@@ -342,3 +342,4 @@ fun DashboardScreen(
         }
     }
 }
+

@@ -1,5 +1,6 @@
 package com.andev.dclare.data.mappers
 
+import com.andev.dclare.data.dto.DolarApiResponseDto
 import com.andev.dclare.data.dto.FrankfurterResponseDto
 import com.andev.dclare.domain.model.CurrencyRates
 import com.andev.dclare.domain.model.DeadlineUrgency
@@ -12,7 +13,24 @@ import java.util.Locale
 
 object FiscalMappers {
 
-    fun mapFrankfurterDtoToCurrencyRates(dto: FrankfurterResponseDto, fallbackVesRate: Double = 49.20): CurrencyRates {
+    fun mapDolarApiDtoToCurrencyRates(dto: DolarApiResponseDto): CurrencyRates {
+        val rate = if (dto.promedio > 0.0) dto.promedio else 897.54
+        val dateDisplay = if (dto.fechaActualizacion.isNotBlank()) {
+            dto.fechaActualizacion.take(10)
+        } else {
+            SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+        }
+
+        return CurrencyRates(
+            base = "USD",
+            date = dateDisplay,
+            eurRate = 0.92,
+            vesRate = rate,
+            lastUpdated = "BCV Oficial (DolarApi)"
+        )
+    }
+
+    fun mapFrankfurterDtoToCurrencyRates(dto: FrankfurterResponseDto, fallbackVesRate: Double = 897.54): CurrencyRates {
         val eur = dto.rates["EUR"] ?: 0.92
         val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
         return CurrencyRates(

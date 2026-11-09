@@ -68,10 +68,10 @@ com.andev.dclare
 - Grilla mensual con marcadores circulares en las fechas de corte.
 - Al pulsar un día, un panel contextual lista todas las obligaciones que vencen en dicha fecha.
 
-### 4. 💱 Ticker de Divisas en Tiempo Real (Public API)
-- Consumo de **Frankfurter API** mediante Retrofit + OkHttp.
-- Caché local reactivo con degradación suave (*graceful fallback* offline).
-- Conversión instantánea de bases imponibles entre USD, EUR y VES.
+### 4. 💱 Ticker de Divisas en Tiempo Real (DolarApi Venezuela)
+- Consumo directo de la API pública oficial de **[DolarApi Venezuela](https://dolarapi.com/docs/venezuela/)** (`https://ve.dolarapi.com/v1/dolares/oficial`) mediante Retrofit + OkHttp.
+- Cotización oficial del BCV en tiempo real con botón de actualización manual y cálculo de bases imponibles en Bolívares (VES).
+- Caché local reactivo con degradación suave (*graceful fallback* offline a cotización benchmark).
 
 ### 5. 🏢 Gestión Multiempresa y Configuración de Tributos
 - Soporte para contribuyentes Ordinarios y Especiales.
@@ -130,3 +130,4 @@ El repositorio incluye la API REST en PHP que respalda la versión web/móvil:
    ./gradlew assembleDebug
    ```
 4. Ejecuta en tu emulador o dispositivo físico Android (API 24+).
+

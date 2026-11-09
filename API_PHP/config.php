@@ -34,3 +34,4 @@ return [
     // Soporte al cliente / WhatsApp simulado
     'MEMBERSHIP_WHATSAPP_NUMBER' => '15550192834',
 ];
+

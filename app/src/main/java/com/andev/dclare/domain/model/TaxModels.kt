@@ -85,3 +85,4 @@ data class AuthUser(
     val isPremium: Boolean,
     val roleName: String
 )
+

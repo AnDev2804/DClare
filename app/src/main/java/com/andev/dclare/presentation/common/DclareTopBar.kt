@@ -148,7 +148,7 @@ fun DclareTopBar(
                         )
                         Spacer(modifier = Modifier.width(6.dp))
                         Text(
-                            text = String.format(Locale.US, "1 USD = %.2f VES", currencyRates.vesRate),
+                            text = String.format(Locale.US, "BCV: 1 USD = %.2f VES", currencyRates.vesRate),
                             style = MaterialTheme.typography.labelSmall,
                             color = TextPrimary,
                             fontWeight = FontWeight.Medium
@@ -264,3 +264,4 @@ fun DclareTopBar(
         }
     }
 }
+

@@ -230,3 +230,4 @@ class FiscalRepositoryImpl(
         return Result.success(Unit)
     }
 }
+

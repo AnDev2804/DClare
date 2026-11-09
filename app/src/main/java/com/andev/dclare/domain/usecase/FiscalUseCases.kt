@@ -47,3 +47,4 @@ class GetTaxBreakdownUseCase(
         return fiscalRepository.getDonutChartData(companyId)
     }
 }
+

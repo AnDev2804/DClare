@@ -26,6 +26,15 @@ object ApiClient {
             .build()
     }
 
+    val dolarApi: DolarApi by lazy {
+        Retrofit.Builder()
+            .baseUrl("https://ve.dolarapi.com/")
+            .client(okHttpClient)
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .build()
+            .create(DolarApi::class.java)
+    }
+
     val currencyApi: CurrencyApi by lazy {
         Retrofit.Builder()
             .baseUrl("https://api.frankfurter.app/")

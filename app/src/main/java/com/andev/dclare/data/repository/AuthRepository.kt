@@ -80,3 +80,4 @@ class AuthRepositoryImpl : AuthRepository {
         _currentUser.value = null
     }
 }
+

@@ -38,3 +38,4 @@ val TextPrimary = Color(0xFFF8FAFC)
 val TextSecondary = Color(0xFF94A3B8)
 val TextMuted = Color(0xFF64748B)
 val TextOnEmerald = Color(0xFF022C22)
+
