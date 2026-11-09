@@ -1,30 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
-        <aapt:attr name="android:fillColor">
-            <gradient
-                android:endX="85.84757"
-                android:endY="92.4963"
-                android:startX="42.9492"
-                android:startY="49.59793"
-                android:type="linear">
-                <item
-                    android:color="#44000000"
-                    android:offset="0.0" />
-                <item
-                    android:color="#00000000"
-                    android:offset="1.0" />
-            </gradient>
-        </aapt:attr>
-    </path>
+
+    <!-- ESCUDO (SHIELD) -->
+    <!-- Left Half: Light Emerald Accent (#34D399) -->
     <path
-        android:fillColor="#FFFFFF"
-        android:fillType="nonZero"
-        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
-        android:strokeWidth="1"
-        android:strokeColor="#00000000" />
+        android:fillColor="#34D399"
+        android:pathData="M54,23 L54,63 C50,60 44,55 40.5,48 C37,41 36,33 36,27 C41,25.5 48,23.8 54,23 Z" />
+
+    <!-- Right Half: Primary Emerald (#10B981) -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M54,23 L54,63 C58,60 64,55 67.5,48 C71,41 72,33 72,27 C67,25.5 60,23.8 54,23 Z" />
+
+    <!-- Shield Inner Cutout (Checkmark in background black #0B0F17) -->
+    <path
+        android:pathData="M45,43 L51,49 L63,35"
+        android:strokeWidth="3.2"
+        android:strokeColor="#0B0F17"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- TEXT: DClare in Emerald Green -->
+    <!-- Letter 'D' -->
+    <path
+        android:pathData="M35,71.5 L35,79.5 M35,71.5 L38,71.5 C40,71.5 41,73 41,75.5 C41,78 40,79.5 38,79.5 L35,79.5"
+        android:strokeWidth="1.8"
+        android:strokeColor="#34D399"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Letter 'C' -->
+    <path
+        android:pathData="M48.5,73 C47.5,71.8 46,71.5 44.8,71.5 C43,71.5 42,73.2 42,75.5 C42,77.8 43,79.5 44.8,79.5 C46,79.5 47.5,79 48.5,78"
+        android:strokeWidth="1.8"
+        android:strokeColor="#34D399"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Letter 'l' -->
+    <path
+        android:pathData="M51.5,71.5 L51.5,79.5"
+        android:strokeWidth="1.8"
+        android:strokeColor="#10B981"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Letter 'a' -->
+    <path
+        android:pathData="M59,74.5 L59,79.5 M59,76 C58.5,75 57.5,74.5 56.5,74.5 C55,74.5 54.2,75.6 54.2,77 C54.2,78.4 55,79.5 56.5,79.5 C57.5,79.5 58.5,79 59,78"
+        android:strokeWidth="1.8"
+        android:strokeColor="#10B981"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Letter 'r' -->
+    <path
+        android:pathData="M62,74.5 L62,79.5 M62,76.2 C63,75 64.2,74.5 65.5,74.5"
+        android:strokeWidth="1.8"
+        android:strokeColor="#10B981"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Letter 'e' -->
+    <path
+        android:pathData="M68,77 L72.5,77 C72.5,75.4 71.5,74.5 70.2,74.5 C68.8,74.5 68,75.6 68,77 C68,78.4 68.8,79.5 70.2,79.5 C71.2,79.5 72,79 72.5,78.2"
+        android:strokeWidth="1.8"
+        android:strokeColor="#10B981"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
 </vector>
