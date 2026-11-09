@@ -1,0 +1,10 @@
+{
+  "require": {
+    "google/auth": "1.53.0",
+    "phpmailer/phpmailer": "^7.1",
+    "phpseclib/phpseclib": "3.*"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

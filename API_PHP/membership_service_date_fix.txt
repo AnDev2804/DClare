@@ -1,0 +1,48 @@
+REEMPLAZA SOLO la función membership_parse_payment_date() por esta versión si quieres eliminar la advertencia P1116 de Intelephense:
+
+function membership_parse_payment_date(
+    string $value,
+    string $timezoneName,
+    string $field = 'fechaPago'
+): string
+{
+    if (!preg_match(
+        '/^\\d{4}-\\d{2}-\\d{2}(?:[T ]\\d{2}:\\d{2}(?::\\d{2})?(?:Z|[+-]\\d{2}:\\d{2})?)?$/',
+        trim($value)
+    )) {
+        api_throw(422, 'VALIDATION_ERROR', 'La fecha debe usar formato ISO 8601.', [
+            'field' => $field,
+        ]);
+    }
+
+    $date = null;
+
+    try {
+        $timezone = new DateTimeZone($timezoneName);
+        $date = new DateTimeImmutable($value, $timezone);
+        $dateErrors = DateTimeImmutable::getLastErrors();
+        if (is_array($dateErrors)
+            && ((int)$dateErrors['warning_count'] > 0 || (int)$dateErrors['error_count'] > 0)) {
+            throw new InvalidArgumentException('Invalid date.');
+        }
+    } catch (Throwable $e) {
+        api_throw(422, 'VALIDATION_ERROR', 'La fecha o la zona horaria no es válida.', [
+            'field' => $field,
+        ]);
+    }
+
+    if (!$date instanceof DateTimeImmutable) {
+        api_throw(422, 'VALIDATION_ERROR', 'La fecha no es válida.', ['field' => $field]);
+    }
+
+    $utc = $date->setTimezone(new DateTimeZone('UTC'));
+    $now = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+
+    if ($utc > $now->modify('+1 day') || $utc < $now->modify('-180 days')) {
+        api_throw(422, 'VALIDATION_ERROR', 'La fecha está fuera del rango permitido.', [
+            'field' => $field,
+        ]);
+    }
+
+    return $utc->format('Y-m-d H:i:s');
+}
